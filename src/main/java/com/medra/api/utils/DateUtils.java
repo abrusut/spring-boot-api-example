@@ -1,4 +1,4 @@
-package com.medra.neurologia.utils;
+package com.medra.api.utils;
 
 import java.text.DateFormat;
 import java.text.DecimalFormat;

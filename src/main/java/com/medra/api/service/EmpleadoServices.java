@@ -1,4 +1,4 @@
-package com.medra.neurologia.service;
+package com.medra.api.service;
 
 import java.util.List;
 

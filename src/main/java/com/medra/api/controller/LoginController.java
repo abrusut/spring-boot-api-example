@@ -1,4 +1,4 @@
-package com.medra.neurologia.controller;
+package com.medra.api.controller;
 
 import javax.servlet.http.HttpServletRequest;
 

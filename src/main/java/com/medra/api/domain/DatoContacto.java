@@ -1,4 +1,4 @@
-package com.medra.neurologia.domain;
+package com.medra.api.domain;
 
 import javax.persistence.Embeddable;
 

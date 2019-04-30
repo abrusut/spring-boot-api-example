@@ -1,4 +1,4 @@
-package com.medra.neurologia.model;
+package com.medra.api.model;
 
 import java.util.Collection;
 import java.util.List;

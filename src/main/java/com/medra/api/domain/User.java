@@ -1,4 +1,4 @@
-package com.medra.neurologia.domain;
+package com.medra.api.domain;
 
 import java.io.Serializable;
 import javax.persistence.*;
