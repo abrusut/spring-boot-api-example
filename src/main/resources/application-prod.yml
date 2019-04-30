@@ -1,0 +1,17 @@
+loggin:
+    level:
+       org.hibernate.SQL: debug
+spring:
+    datasource:
+        url: jdbc:mysql://neurodb.c7ixcrei7f8p.us-east-2.rds.amazonaws.com:3306/neurodb?useUnicode=true&characterEncoding=UTF-8&allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=America/Argentina/Buenos_Aires
+        username: inneldb
+        password: innel2020
+        driver-class-name: com.mysql.cj.jdbc.Driver
+    jpa:
+      show-sql: true
+      #none, update, create, create-drop
+      #hibernate.ddl-auto: none
+      hibernate:
+          #ddl-auto: create
+          naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+          dialect: org.hibernate.dialect.MySQL5Dialect

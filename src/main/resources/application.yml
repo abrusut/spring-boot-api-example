@@ -1,0 +1,34 @@
+server:
+    port: 8081
+    contextPath: /neurologia
+    
+spring:
+    jackson:
+        serialization:
+            WRITE_DATES_AS_TIMESTAMPS: false
+        date-format: 'yyyy-MM-dd HH:mm:ss'    
+        time-zone: America/Argentina/Buenos_Aires
+        locale: es_AR
+    mail:
+        host: smtp.gmail.com
+        port: 587
+        username: medrasoftnet@gmail.com
+        password: medra2010
+        from: medrasoftnet@gmail.com
+        protocol: smtp
+        tls: true
+        properties.mail.smtp:
+            auth: true
+            starttls.enable: true
+            ssl.trust: smtp.gmail.com
+    messages:
+        cache-seconds: 1
+    thymeleaf:
+        cache: false
+
+security:
+  basic:
+    enabled: false    
+  oauth2:
+    resource:
+      filter-order: 3        

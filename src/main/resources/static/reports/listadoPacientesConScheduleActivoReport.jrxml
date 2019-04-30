@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="TableReport" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="30" bottomMargin="30" isFloatColumnFooter="true" uuid="c927e671-66f3-40f2-a189-49d30d607fe5">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="pacienteReport "/>
+	<parameter name="titulo" class="java.lang.String"/>
+	<parameter name="innelLogo" class="java.awt.Image"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="paciente" class="com.medra.neurologia.domain.Paciente"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="50" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="140" height="50" uuid="57a22e41-d16b-4564-b80f-09f660e30b76"/>
+				<imageExpression><![CDATA[$P{innelLogo}]]></imageExpression>
+			</image>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="403" y="0" width="150" height="23" uuid="50329745-e014-4375-9678-292ac4f6b640"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="140" y="0" width="262" height="20" uuid="c1fb553d-fcc1-421c-96eb-97a784caa922"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+			</staticText>
+			<textField>
+				<reportElement x="140" y="30" width="262" height="20" uuid="c0b2cd34-2c8a-42e4-b74d-4f40d6d8a4ff"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{titulo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="15" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="190" height="30" uuid="aa741c79-92b1-4849-aee3-c364ac10cb35">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ed630899-e552-4d10-9564-1afacd273446"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[APELLIDO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="440" y="0" width="114" height="30" uuid="73a31604-3a2e-41ab-afaa-bccde6c2d0d0">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="30208617-212b-491b-8b4e-1a2ff79cd4c9"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[DNI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="350" y="0" width="90" height="30" uuid="8ed5b448-9b66-4fd5-a894-80d6b604cf17">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="30208617-212b-491b-8b4e-1a2ff79cd4c9"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[TELEFONO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="190" y="0" width="160" height="30" uuid="3a26bf34-d5bd-489c-94aa-efd19a38b2dc">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="30208617-212b-491b-8b4e-1a2ff79cd4c9"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[NOMBRE]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="190" height="30" uuid="87c19a35-1233-4f9c-8c1a-1c51ea3f148c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f85c38a4-6237-47ff-9e45-6afcb7aecb1d"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{paciente}.getApellido()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="190" y="0" width="160" height="30" uuid="aae4ef15-4a77-4099-b16e-be28858464ce">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ecec68d3-0258-476d-8ca1-15ee46bb212d"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{paciente}.getNombre()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="350" y="0" width="90" height="30" uuid="dc13a3e3-226c-4a6b-a4e1-e37d40d31972">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cc17aed5-c124-4e97-8ad4-efaa2f289863"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{paciente}.getTelefono()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="440" y="0" width="113" height="30" uuid="89d94738-896d-43db-8073-1cfbb08c801b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d35a81fc-2779-4712-b3e2-15c9063ebfb5"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{paciente}.getDni()]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="383" y="0" width="170" height="30" uuid="3af42627-ae3a-41fe-a428-fe79e18cfeab"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Pagina " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
