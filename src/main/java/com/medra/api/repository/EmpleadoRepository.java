@@ -1,6 +1,7 @@
 package com.medra.api.repository;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -8,7 +9,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
 
-import com.medra.neurologia.domain.Empleado;
+import com.medra.api.domain.Empleado;
 
 public interface EmpleadoRepository extends PagingAndSortingRepository<Empleado, Long> {
 
@@ -22,5 +23,5 @@ public interface EmpleadoRepository extends PagingAndSortingRepository<Empleado,
 
 	List<Empleado> findByIsProfesional(boolean b);
 
-	Empleado findById(Long id);
+	Optional<Empleado> findById(Long id);
 }

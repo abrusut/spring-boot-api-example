@@ -25,10 +25,10 @@ import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-import com.medra.neurologia.domain.Paciente;
-import com.medra.neurologia.domain.ReportePacientesDTO;
-import com.medra.neurologia.domain.Turno;
-import com.medra.neurologia.report.ReportHorarioClienteSemana;
+import com.medra.api.domain.Paciente;
+import com.medra.api.domain.ReportePacientesDTO;
+import com.medra.api.domain.Turno;
+import com.medra.api.report.ReportHorarioClienteSemana;
 
 import net.sf.jasperreports.engine.JRDataSource;
 import net.sf.jasperreports.engine.JRException;

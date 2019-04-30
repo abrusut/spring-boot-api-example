@@ -7,10 +7,9 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import com.medra.neurologia.domain.Empleado;
-import com.medra.neurologia.domain.Paciente;
-import com.medra.neurologia.exception.ResourceNotFoundException;
-import com.medra.neurologia.repository.EmpleadoRepository;
+import com.medra.api.domain.Empleado;
+import com.medra.api.exception.ResourceNotFoundException;
+import com.medra.api.repository.EmpleadoRepository;
 
 @Service
 public class EmpleadoServices {

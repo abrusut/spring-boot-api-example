@@ -8,10 +8,10 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.medra.neurologia.domain.User;
-import com.medra.neurologia.model.CustomUserDetails;
-import com.medra.neurologia.repository.UserRepository;
-import com.medra.neurologia.repository.UserRolesRepository;
+import com.medra.api.domain.User;
+import com.medra.api.model.CustomUserDetails;
+import com.medra.api.repository.UserRepository;
+import com.medra.api.repository.UserRolesRepository;
 
 @Service("customUserDetailsService")
 public class CustomUserDetailsService implements UserDetailsService {

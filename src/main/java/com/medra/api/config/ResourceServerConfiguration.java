@@ -1,5 +1,4 @@
-package com.medra.api;
-
+package com.medra.api.config;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;

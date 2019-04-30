@@ -8,9 +8,9 @@ import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.util.StringUtils;
 
-import com.medra.neurologia.domain.User;
+import com.medra.api.domain.User;
 
-public class CustomUserDetails extends com.medra.neurologia.domain.User implements UserDetails {
+public class CustomUserDetails extends com.medra.api.domain.User implements UserDetails {
 
 	private static final long serialVersionUID = 1L;
 	private List<String> userRoles;
