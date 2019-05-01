@@ -1,6 +1,7 @@
 server:
     port: 8081
-    contextPath: /neurologia
+    servlet:
+      context-path: /medra
     
 spring:
     jackson:
@@ -21,14 +22,5 @@ spring:
             auth: true
             starttls.enable: true
             ssl.trust: smtp.gmail.com
-    messages:
-        cache-seconds: 1
-    thymeleaf:
-        cache: false
 
-security:
-  basic:
-    enabled: false    
-  oauth2:
-    resource:
-      filter-order: 3        
+    

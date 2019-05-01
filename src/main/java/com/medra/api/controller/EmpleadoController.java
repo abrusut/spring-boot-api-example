@@ -24,13 +24,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.medra.neurologia.domain.Actividad;
-import com.medra.neurologia.domain.Empleado;
-import com.medra.neurologia.dto.ProfesionalActividades;
-import com.medra.neurologia.exception.ResourceNotFoundException;
-import com.medra.neurologia.service.ActividadServices;
-import com.medra.neurologia.service.CustomUserDetailsService;
-import com.medra.neurologia.service.EmpleadoServices;
+import com.medra.api.domain.Actividad;
+import com.medra.api.domain.Empleado;
+import com.medra.api.exception.ResourceNotFoundException;
+import com.medra.api.service.ActividadServices;
+import com.medra.api.service.CustomUserDetailsService;
+import com.medra.api.service.EmpleadoServices;
 
 
 
@@ -94,17 +93,6 @@ public class EmpleadoController {
 		return new ResponseEntity<>(empleadoServices.save(empleado),HttpStatus.OK);
 	}
 	
-	@RequestMapping(value = "asociar-actividades", method=RequestMethod.POST, produces = APPLICATION_JSON_VALUE)
-	public ResponseEntity<Empleado> save(@Valid @RequestBody ProfesionalActividades profesionalActividades){
-		Empleado empleado= empleadoServices.findEmpleadoById(profesionalActividades.getIdEmpleado());
-		Set<Actividad> actividades=  new HashSet<Actividad>();
-		for (String Nombreactividad : profesionalActividades.getIdActividades()) {
-			Actividad actividad= actividadServices.findByNombre(Nombreactividad);
-			actividades.add(actividad);
-		}
-		empleado.setActividades(actividades);
-		return new ResponseEntity<>(empleadoServices.save(empleado),HttpStatus.OK);
-	}
 	
 	
 	@DeleteMapping(path= "{id}")

@@ -20,12 +20,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.medra.neurologia.exception.UserException;
-import com.medra.neurologia.exception.VmError;
-import com.medra.neurologia.model.CustomUserDetails;
-import com.medra.neurologia.repository.UserRepository;
-import com.medra.neurologia.service.CustomUserDetailsService;
-import com.medra.neurologia.service.EmailServices;
+import com.medra.api.exception.UserException;
+import com.medra.api.exception.VmError;
+import com.medra.api.model.CustomUserDetails;
+import com.medra.api.repository.UserRepository;
+import com.medra.api.service.CustomUserDetailsService;
+import com.medra.api.service.EmailServices;
 
 
 @RestController
@@ -42,6 +42,10 @@ public class UserController {
 	@Autowired
 	private UserRepository userRepository;
 
+	@RequestMapping("/public/status")
+	public String index() {
+			return "hello_:)";
+	}
 	
 	@RequestMapping("/user")
 	public CustomUserDetails user(Principal principal) {
@@ -57,8 +61,8 @@ public class UserController {
 	}
 	
 	@RequestMapping(value = "/public/user/save", method = RequestMethod.POST,consumes="application/json" )	
-	public CustomUserDetails insert(@RequestBody com.medra.neurologia.domain.User userModel) {
-		com.medra.neurologia.domain.User userResult=null;
+	public CustomUserDetails insert(@RequestBody com.medra.api.domain.User userModel) {
+		com.medra.api.domain.User userResult=null;
 		UserDetails u = customUserDetailsService.loadUserByUsername(userModel.getUserName());
 		if(u==null){
 		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();

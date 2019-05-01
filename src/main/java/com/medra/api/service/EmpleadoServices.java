@@ -1,6 +1,7 @@
 package com.medra.api.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -8,6 +9,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.medra.api.domain.Empleado;
+import com.medra.api.exception.BusinessException;
 import com.medra.api.exception.ResourceNotFoundException;
 import com.medra.api.repository.EmpleadoRepository;
 
@@ -18,7 +20,7 @@ public class EmpleadoServices {
 	private EmpleadoRepository empleadoRepository;
 
 	public void VerifyIfEmpleadoExist(Long id) {
-		if (empleadoRepository.findOne(id) == null)
+		if (empleadoRepository.findById(id) == null)
 			throw new ResourceNotFoundException("Empleado no encotrada para el id: " + id);
 	}
 
@@ -27,8 +29,11 @@ public class EmpleadoServices {
 	}
 	
 	public Empleado findEmpleadoById(Long id) {
-		Empleado empleado = empleadoRepository.findById(id);
-		return empleado;
+		Optional<Empleado> empleado = empleadoRepository.findById(id);
+		if(!empleado.isPresent()) {
+			throw new BusinessException(4004, "El empleado a eliminar no existe");
+		}
+		return empleado.get();
 	}
 
 	public List<Empleado> findEmpleadoByName(String cnombre) {
@@ -43,7 +48,7 @@ public class EmpleadoServices {
 
 	public void delete(Long id) {
 		VerifyIfEmpleadoExist(id);
-		empleadoRepository.delete(id);
+		empleadoRepository.deleteById(id);
 
 	}
 
